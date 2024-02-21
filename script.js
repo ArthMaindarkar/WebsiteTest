@@ -25,7 +25,7 @@ function plotGraph() {
   const yValues = xValues.map(x => a * x * x + b * x + c);
 
   // Plot the graph using Chart.js
-  new Chart(ctx, {
+  const myChart = new Chart(ctx, {
     type: 'line',
     data: {
       labels: xValues,
@@ -48,4 +48,21 @@ function plotGraph() {
       },
     },
   });
+
+  // Calculate roots
+  const discriminant = b ** 2 - 4 * a * c;
+  let rootsMessage = 'Roots: ';
+  if (discriminant > 0) {
+    const root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+    const root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+    rootsMessage += `root1: ${root1.toFixed(2)}, root2: ${root2.toFixed(2)}`;
+  } else if (discriminant === 0) {
+    const root = -b / (2 * a);
+    rootsMessage += `double root: ${root.toFixed(2)}`;
+  } else {
+    rootsMessage += 'no real roots';
+  }
+
+  // Display roots message
+  document.getElementById('rootsMessage').innerText = rootsMessage;
 }
