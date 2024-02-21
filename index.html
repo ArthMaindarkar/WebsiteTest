@@ -10,14 +10,27 @@
 <body>
   <div class="container">
     <h1>Quadratic Equation Graph</h1>
-    <label for="a">Enter a:</label>
-    <input type="number" id="a" step="any" placeholder="Enter a">
-    <label for="b">Enter b:</label>
-    <input type="number" id="b" step="any" placeholder="Enter b">
-    <label for="c">Enter c:</label>
-    <input type="number" id="c" step="any" placeholder="Enter c">
+    
+    <div class="input-container">
+      <label for="a">Enter a:</label>
+      <input type="number" id="a" step="any" placeholder="Enter a">
+    </div>
+
+    <div class="input-container">
+      <label for="b">Enter b:</label>
+      <input type="number" id="b" step="any" placeholder="Enter b">
+    </div>
+
+    <div class="input-container">
+      <label for="c">Enter c:</label>
+      <input type="number" id="c" step="any" placeholder="Enter c">
+    </div>
+
     <button onclick="plotGraph()">Plot Graph</button>
+
     <canvas id="graphCanvas"></canvas>
+
+    <div id="rootsMessage"></div>
   </div>
 
   <script src="script.js"></script>
