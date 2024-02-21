@@ -1,17 +1,19 @@
-let myChart; // Declare a variable to store the Chart.js instance
-
 function plotGraph() {
   const a = parseFloat(document.getElementById('a').value);
   const b = parseFloat(document.getElementById('b').value);
   const c = parseFloat(document.getElementById('c').value);
 
-  const canvas = document.getElementById('graphCanvas');
-  const ctx = canvas.getContext('2d');
+  // Remove the existing canvas element
+  const oldCanvas = document.getElementById('graphCanvas');
+  const parent = oldCanvas.parentNode;
+  parent.removeChild(oldCanvas);
 
-  // If myChart instance exists, destroy it to clear the previous graph
-  if (myChart) {
-    myChart.destroy();
-  }
+  // Create a new canvas element
+  const newCanvas = document.createElement('canvas');
+  newCanvas.id = 'graphCanvas';
+  parent.appendChild(newCanvas);
+
+  const ctx = newCanvas.getContext('2d');
 
   // Generate x values
   const xValues = [];
@@ -23,7 +25,7 @@ function plotGraph() {
   const yValues = xValues.map(x => a * x * x + b * x + c);
 
   // Plot the graph using Chart.js
-  myChart = new Chart(ctx, {
+  new Chart(ctx, {
     type: 'line',
     data: {
       labels: xValues,
