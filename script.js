@@ -55,7 +55,7 @@ function plotGraph() {
   if (discriminant > 0) {
     const root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
     const root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
-    rootsMessage += `root1: ${root1.toFixed(2)}, root2: ${root2.toFixed(2)}`;
+    rootsMessage += `${root1.toFixed(2)}, ${root2.toFixed(2)}`;
   } else if (discriminant === 0) {
     const root = -b / (2 * a);
     rootsMessage += `double root: ${root.toFixed(2)}`;
