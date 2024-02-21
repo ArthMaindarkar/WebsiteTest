@@ -63,6 +63,13 @@ function plotGraph() {
     rootsMessage += 'no real roots';
   }
 
-  // Display roots message
-  document.getElementById('rootsMessage').innerText = rootsMessage;
+  // Display roots message or create the element if it doesn't exist
+  let messageElement = document.getElementById('rootsMessage');
+  if (!messageElement) {
+    messageElement = document.createElement('div');
+    messageElement.id = 'rootsMessage';
+    parent.appendChild(messageElement);
+  }
+  messageElement.innerText = rootsMessage;
 }
+
