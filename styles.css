@@ -17,12 +17,17 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-label, input {
+.input-container {
+  margin-bottom: 10px; /* Add margin between input containers */
+}
+
+label {
   display: block;
-  margin: 10px 0;
+  margin-bottom: 5px; /* Add margin between label and input */
 }
 
 button {
+  margin-top: 10px; /* Add margin above the button */
   padding: 10px 20px;
   background-color: #4caf50;
   color: #fff;
@@ -34,3 +39,8 @@ button {
 canvas {
   margin-top: 20px;
 }
+
+#rootsMessage {
+  margin-top: 10px; /* Add margin above the rootsMessage */
+}
+
