@@ -1,4 +1,4 @@
-# QuadraticEquation Demo Site
+# Quadratic Equation Demo Site
 
 Website hosted [here](https://arthmaindarkar.github.io/WebsiteTest/)
 
